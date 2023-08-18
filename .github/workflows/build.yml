@@ -11,22 +11,31 @@ jobs:
         shell: bash
 
     steps:
+      - name: "Checkout repo"
+        uses: actions/checkout@v3
+
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -D WEBRTC_WIN -o webrtcvad.dll ${{ github.workspace }}\exports.c
+          gcc -shared -I webrtc -D WEBRTC_WIN -o webrtcvad.dll exports.c
 
   build-linux:
     runs-on: ubuntu-latest
 
     steps:
+      - name: "Checkout repo"
+        uses: actions/checkout@v3
+
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -o libwebrtcvad.so ${{ github.workspace}}/exports.c
+          gcc -shared -I webrtc -o libwebrtcvad.so exports.c
 
   build-mac:
     runs-on: macos-latest
 
     steps:
+      - name: "Checkout repo"
+        uses: actions/checkout@v3
+
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -o webrtcvad.dylib ${{ github.workspace }}/exports.c
+          gcc -shared -I webrtc -o webrtcvad.dylib exports.c
