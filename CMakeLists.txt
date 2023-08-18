@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 project(WebRTCVad LANGUAGES C)
 
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS "webrtc/*.c")
