@@ -27,7 +27,7 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -o libwebrtcvad.so *.
+          gcc -shared -I webrtc -o libwebrtcvad.so *.c
 
   build-mac:
     runs-on: macos-latest
@@ -38,4 +38,4 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -o webrtcvad.dylib *.
+          gcc -shared -I webrtc -o webrtcvad.dylib *.c
