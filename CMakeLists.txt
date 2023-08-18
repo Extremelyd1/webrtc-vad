@@ -3,12 +3,12 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(WebRTCVad LANGUAGES C)
+project(WebRTCVad LANGUAGES C CXX)
 
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS "webrtc/*.c")
 file(GLOB_RECURSE ccsources CONFIGURE_DEPENDS "webrtc/*.cc")
 
-set_source_files_properties(${ccsources} PROPERTIES LANGUAGE C)
+#set_source_files_properties(${ccsources} PROPERTIES LANGUAGE C)
 
 message(STATUS "${sources}" "${ccsources}")
 
