@@ -16,7 +16,7 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -D WEBRTC_WIN -o webrtcvad.dll exports.c
+          gcc -shared -I webrtc -D WEBRTC_WIN -o webrtcvad.dll *.c
 
   build-linux:
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -o libwebrtcvad.so exports.c
+          gcc -shared -I webrtc -o libwebrtcvad.so *.
 
   build-mac:
     runs-on: macos-latest
@@ -38,4 +38,4 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -o webrtcvad.dylib exports.c
+          gcc -shared -I webrtc -o webrtcvad.dylib *.
