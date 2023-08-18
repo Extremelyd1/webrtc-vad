@@ -5,6 +5,8 @@ project(WebRTCVad LANGUAGES C)
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS "*.c")
 file(GLOB_RECURSE ccsources CONFIGURE_DEPENDS "*.cc")
 
+message(STATUS "${sources}" "${ccsources}")
+
 add_library(WebRTCVad SHARED ${sources} ${ccsources})
 target_include_directories(WebRTCVad PRIVATE webrtc)
 
