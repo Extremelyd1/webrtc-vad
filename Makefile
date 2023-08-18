@@ -3,4 +3,4 @@ HEADERS = $(shell find . -type f -iname '*.h')
 OBJECTS = $(SOURCES:.c=.o)
 
 build:
-	gcc -shared -I. -fPIC -o webrtcvad $(SOURCES)
+	gcc -shared -Iwebrtc -fPIC -o webrtcvad $(SOURCES)
