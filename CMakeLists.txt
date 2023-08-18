@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 
 project(WebRTCVad LANGUAGES C)
 
-file(GLOB_RECURSE sources CONFIGURE_DEPENDS "*.c")
-file(GLOB_RECURSE ccsources CONFIGURE_DEPENDS "*.cc")
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS "webrtc/*.c")
+file(GLOB_RECURSE ccsources CONFIGURE_DEPENDS "webrtc/*.cc")
 
 set_source_files_properties(${ccsources} PROPERTIES LANGUAGE C)
 
@@ -19,3 +19,6 @@ endif (WIN32)
 if (UNIX)
 	target_compile_definitions(WebRTCVad PRIVATE WEBRTC_POSIX)
 endif (UNIX)
+
+add_subdirectory(abseil-cpp)
+target_link_libraries(WebRTCVad absl::base absl::strings)

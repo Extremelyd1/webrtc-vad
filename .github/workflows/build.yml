@@ -16,7 +16,7 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          cmake -S . -B build
+          cmake -S . -B build -G Ninja
           cmake --build build
 
   build-linux:
@@ -28,7 +28,7 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          cmake -S . -B build
+          cmake -S . -B build -G Ninja
           cmake --build build
 
   build-mac:
@@ -40,5 +40,5 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          cmake -S . -B build -DCMAKE_C_FLAGS=-v
+          cmake -S . -B build -G Ninja
           cmake --build build
