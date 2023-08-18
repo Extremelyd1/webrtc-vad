@@ -40,5 +40,5 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          cmake -S . -B build
+          cmake -S . -B build -DCMAKE_C_FLAGS=-v
           cmake --build build
