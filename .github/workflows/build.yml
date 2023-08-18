@@ -11,22 +11,22 @@ jobs:
         shell: bash
 
     steps:
-      - name: "Check GCC version"
+      - name: "Compile binary"
         run: |
-          gcc --version
+          gcc -shared -Iwebrtc -o webrtcvad.dll webrtc/common_audio/vad/*.c
 
   build-linux:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Check GCC version"
+      - name: "Compile binary"
         run: |
-          gcc --version
+          gcc -shared -Iwebrtc -o libwebrtcvad.so webrtc/common_audio/vad/*.c
 
   build-mac:
     runs-on: macos-latest
 
     steps:
-      - name: "Check GCC version"
+      - name: "Compile binary"
         run: |
-          gcc-12 --version
+          gcc -shared -Iwebrtc -o webrtcvad.dylib webrtc/common_audio/vad/*.c
