@@ -16,7 +16,7 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          gcc -shared -I. -D WEBRTC_WIN -o webrtcvad.dll $(find . -type f -iname '*.c')
+          make build
 
   build-linux:
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          gcc -shared -I. -o libwebrtcvad.so $(find . -type f -iname '*.c')
+          make build
 
   build-mac:
     runs-on: macos-latest
@@ -38,4 +38,4 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          gcc -shared -I. -o webrtcvad.dylib $(find . -type f -iname '*.c')
+          make build
