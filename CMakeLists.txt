@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(WebRTCVad LANGUAGES C CXX)
+project(WebRTCVad LANGUAGES C)
 
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS "*.c")
 file(GLOB_RECURSE ccsources CONFIGURE_DEPENDS "*.cc")
+
+set_source_files_properties(${ccsources} PROPERTIES LANGUAGE C)
 
 message(STATUS "${sources}" "${ccsources}")
 
