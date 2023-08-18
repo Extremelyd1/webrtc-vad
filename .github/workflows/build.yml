@@ -11,28 +11,22 @@ jobs:
         shell: bash
 
     steps:
-      - name: "List files"
-        run: ls
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -D WEBRTC_WIN -o webrtcvad.dll exports.c
+          gcc -shared -I webrtc -D WEBRTC_WIN -o webrtcvad.dll .\exports.c
 
   build-linux:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "List files"
-        run: ls
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -o libwebrtcvad.so exports.c
+          gcc -shared -I webrtc -o libwebrtcvad.so ./exports.c
 
   build-mac:
     runs-on: macos-latest
 
     steps:
-      - name: "List files"
-        run: ls
       - name: "Compile binary"
         run: |
-          gcc -shared -I webrtc -o webrtcvad.dylib exports.c
+          gcc -shared -I webrtc -o webrtcvad.dylib ./exports.c
