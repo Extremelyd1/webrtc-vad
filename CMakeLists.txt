@@ -2,9 +2,10 @@ cmake_minimum_required(VERSION 3.5)
 
 project(WebRTCVad LANGUAGES C)
 
-file(GLOB_RECURSE sources CONFIGURE_DEPENDS "*.c" "*.cc")
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS "*.c")
+file(GLOB_RECURSE ccsources CONFIGURE_DEPENDS "*.cc")
 
-add_library(WebRTCVad SHARED ${sources})
+add_library(WebRTCVad SHARED ${sources} ${ccsources})
 target_include_directories(WebRTCVad PRIVATE webrtc)
 
 if (WIN32)
