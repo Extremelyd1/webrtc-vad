@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(WebRTCVad LANGUAGES C)
+project(WebRTCVad LANGUAGES C CXX)
 
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS "*.c")
 file(GLOB_RECURSE ccsources CONFIGURE_DEPENDS "*.cc")
