@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: "Compile binary"
         run: |
-          cd ${{ github.repository }}
+          cd ${{ github.workspace }}
           gcc -shared -I webrtc -D WEBRTC_WIN -o webrtcvad.dll exports.c
 
   build-linux:
@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: "Compile binary"
         run: |
-          cd ${{ github.repository }}
+          cd ${{ github.workspace }}
           gcc -shared -I webrtc -o libwebrtcvad.so exports.c
 
   build-mac:
@@ -31,5 +31,5 @@ jobs:
     steps:
       - name: "Compile binary"
         run: |
-          cd ${{ github.repository }}
+          cd ${{ github.workspace }}
           gcc -shared -I webrtc -o webrtcvad.dylib exports.c
