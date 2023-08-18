@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: "Checkout repo"
         uses: actions/checkout@v3
+        with:
+          submodules: true
 
       - name: "Compile binary"
         run: |
@@ -25,6 +27,8 @@ jobs:
     steps:
       - name: "Checkout repo"
         uses: actions/checkout@v3
+        with:
+          submodules: true
 
       - name: "Compile binary"
         run: |
@@ -37,6 +41,8 @@ jobs:
     steps:
       - name: "Checkout repo"
         uses: actions/checkout@v3
+        with:
+          submodules: true
 
       - name: "Compile binary"
         run: |
