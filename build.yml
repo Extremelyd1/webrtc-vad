@@ -1,0 +1,32 @@
+name: Build binaries
+
+on: push
+
+jobs:
+  build-win:
+    runs-on: windows-latest
+    
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: "Check GCC version"
+        run: |
+          gcc --version
+
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Check GCC version"
+        run: |
+          gcc --version
+
+  build-mac:
+    runs-on: macos-latest
+
+    steps:
+      - name: "Check GCC version"
+        run: |
+          gcc-12 --version
