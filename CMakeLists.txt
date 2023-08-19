@@ -12,7 +12,7 @@ file(GLOB_RECURSE ccsources CONFIGURE_DEPENDS "webrtc/*.cc")
 
 message(STATUS "${sources}" "${ccsources}")
 
-add_library(WebRTCVad SHARED ${sources} ${ccsources})
+add_library(WebRTCVad SHARED exports.c ${sources} ${ccsources})
 target_include_directories(WebRTCVad PRIVATE webrtc)
 
 if (WIN32)
