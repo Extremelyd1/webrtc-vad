@@ -18,8 +18,8 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          cmake -S . -B build -D CMAKE_BUILD_TYPE=Release
-          cmake --build build
+          cmake -S . -B build
+          cmake --build build --config Release
 
       - name: "Upload binary"
         uses: actions/upload-artifact@v3
@@ -38,8 +38,8 @@ jobs:
 
       - name: "Compile binary"
         run: |
-          cmake -S . -B build
-          cmake --build build --config Release
+          cmake -S . -B build -D CMAKE_BUILD_TYPE=Release
+          cmake --build build
 
       - name: "Upload binary"
         uses: actions/upload-artifact@v3
